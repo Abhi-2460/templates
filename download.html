@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block container %}
+
+<div class="container pt-5 pt-md-5 pt-sm-4">
+    <div class="row pt-lg-5 pt-lg-5 pt-sm-2">
+        <table class="table">
+            <tr>
+                <th><p class="heading">Release</p></th>
+                <th><p class="heading">Message</p></th>
+                <th><p class="heading">Link</p></th>
+            </tr>
+            {% for r in release %}
+            <tr>
+                <td><p class="tagline">{{ r['version'] }}</p></td>
+                <td><p class="tagline">{{ r['mesg'] }}</p></td>
+                <td>
+                    {% for c in r['url'] %}
+                        <a href="{{ r['url'][c] }}"> {{c}} </a>
+                        <br>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <p class="tagline">We know you are pro but please follow the Installation Guide: <a href="https://wiki.releax.in">Guide</a></p>
+    </div>
+
+</div>
+
+{% endblock %}

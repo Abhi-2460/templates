@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block container %}
+
+<div class="container pt-5 pt-md-5">
+    <div class="row pt-5 pt-md-5 pt-sm-4">
+        <h1 class="heading"> Gallery </h1>
+	<hr class="mt-2 mb-5">
+	<div class="row text-center text-lg-left">
+	{% for i in Images %}
+		<div class="col-lg-3 col-md-4 col-6">
+			<a href="{{ i }}" class="d-block mb-4 h100">
+				<img class="img-fluid img-thumbnail"
+				     src="{{ i }}">
+			</a>
+		</div>
+	{% endfor %}
+	</div>
+	</div>
+</div>
+
+{% endblock %}

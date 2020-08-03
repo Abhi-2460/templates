@@ -1,0 +1,357 @@
+{% extends 'base.html' %}
+{% block container %}
+
+<section id="main">
+<div class="container">
+    <div class="row justify-content-center">
+    <!-- Left top Heading -->
+        <div class="col-12 col-md-6 col-xl-5 pr-xl-5 pr-xl-3 pt-lg-5"
+             data-aos="fade-right"
+             data-aos-duration="1500">
+            <h1 class="heading mt-lg-5 pt-lg-5"
+                style="color: #212529;
+                       font-weight: 700;">
+                feel the power of opensource with releax
+            </h1>
+    <!-- Left content Heading -->
+            <p class="tagline mb-3"
+               style="font-size: 22px;
+                      font-weight: 400;">
+                its time to upgrade your system with the power of opensource software to get ultimate level of customization and security.
+            </p>
+
+            <p class="tagline">
+                Download Counts: {{ download_count }}
+            </p>
+
+    <!-- Download Button-->
+            <a href="{{ '/download' }}"
+               class="btn hover">
+               Download
+            </a>
+
+        </div>
+        <!-- Image -->
+        <div class="col-12 col-md-6 col-xl-5 mt-lg-5 offset-xl-1">
+               <!-- Download Button-->
+                <div class="mb-4">
+                <img class="img-fluid hover"
+                     src="{{url_for('static',filename='img/releax.in/looks.png')}}"
+                     data-aos="fade-left"
+                     data-aos-duration="1500">
+        </div>
+
+    </div>
+</div>
+</div>
+</section>
+
+<section id="features"
+         class="shadow pt-lg-5 fixpadding">
+        
+        <div class="container py-lg-5">
+        <h3 class="heading text-center"
+            style="color: #212b35">
+            Why releax os ?
+        </h3>
+        <p class="tagline text-center mb-5">
+            Try it and you will get to know
+        </p>
+        <div class="row row-cols-1 row-cols-md-3">
+            {% for f in features %}
+            <div class="col mb-4">
+
+                <div class="card"
+                     data-aos="zoom-in-right"
+                     data-aos-duration="1500"
+                     style="width: 18rem;">
+                    <img class="card-img-top mx-auto d-block hoverimage" style="width: 120px; height: auto;" src="{{ url_for('static', filename='img/releax.in/icons/' + f['image'])}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title heading text-center"
+                            style="font-weight: normal;">
+                            {{ f['title'] }}
+                        </h5>
+                        <p class="card-text tagline text-center">
+                            {{ f['data'] }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+<div class="bg-primary text-light fixpadding">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col p-lg-5"
+                 data-aos="zoom-in"
+                 data-aos-duration="1500">
+                <h3 class="heading">
+                    Are you ready to feel the power of releax os ?
+                </h3>
+                <h4 class="tagline text-light">
+                    Try releax os for free, Join the great releax community and be the part of the upcomming future
+                </h4>
+                <a class="btn hover"
+                     style="border: 2px solid white;
+                            background-color: transparent;"
+                     href="https://releaxcommunity.flarum.cloud/">
+                    Join Community
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="apps"
+         class="shadow fixpadding">
+    <div class="container pt-lg-5 fixpadding">
+        <div class="row p-lg-5"
+             data-aos="fade-left"
+             data-aos-duration="1500">
+            <div class="col-sm-4 justify-content-center">
+                <h4 class="heading pt-lg-5">
+                    Pickup your faviourate apps with <b>Bazaar</b>, a app market
+                </h4>
+                <p class="tagline">
+                    Bazaar, A App market that provide a beautiful and simple interface to Browser for installation and uninstallation of
+                    your apps.
+                </p>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-7">
+                <img class="img-fluid shadow-lg" 
+                     src="{{url_for('static',filename='img/releax.in/bazaar.png')}}"> 
+            </div>
+        </div>
+
+        <div class="row p-lg-5 fixpadding"></div>
+
+        <div class="row p-lg-5 fixpadding"
+             data-aos="fade-right"
+             data-aos-duration="1500">
+            <div class="col-sm-7">
+                <img class="img-fluid shadow-lg" 
+                     src="{{url_for('static',filename='img/releax.in/apportunity.png')}}">
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-4 pt-lg-5">
+                <h4 class="heading">
+                    Opportunity let you setup and manages your system
+                </h4>
+                <div class="tagline">
+                    Fear of installing os, or never done it before, then no worry opportunity is here. Opportunity provide you the opportunity 
+                    to updgrade your potato pc or brinjal laptop with a open source system.
+                </div>
+            </div>
+        </div>
+
+        <div class="row p-lg-5 fixpadding"></div>
+
+        <div class="row p-lg-5"
+             data-aos="fade-left"
+             data-aos-duration="1500">
+            <div class="col-sm-4 justify-content-center">
+                <h4 class="heading pt-lg-5">
+                    My system is too potato,
+                </h4>
+                <p class="tagline">
+                    My system is too slow to work. Don't worry, forget about your system's poor resource management, releax is ultra fast and 
+                    lightweight os. It let you and your apps uses the os only.
+                </p>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-7">
+                <img class="img-fluid shadow-lg" 
+                     src="{{url_for('static',filename='img/releax.in/taskmanager.png')}}"> 
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="bg-success text-light fixpadding shadow">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col p-lg-5"
+                 data-aos="zoom-in"
+                 data-aos-duration="1500">
+                <h3 class="heading">
+                    Be the part of upcoming future, Join releax OS team
+                </h3>
+                <h4 class="tagline text-light">
+                    releax OS - a linux distro to the people like you, by the people like you,
+                    their is no any big organization, only crazy college students.
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="bg-secondary fixpadding text-light"
+     style="background: url( {{ url_for('static',filename='img/releax.in/homeoffice.jpg') }} ) no-repeat;
+            background-size: cover;
+            background-position: center center;
+            filter: grayscale(100%);
+            overflow: hidden;">
+    <div class="row"
+         style="background-color: rgba(0, 0, 0, 0.5);">
+        <div class="col-lg-5 p-lg-5"
+            data-aos="zoom-in"
+            data-aos-duration="1500">
+            <h3 class="heading">
+                An OS for personal usage
+            </h3>
+            <h4 class="tagline text-light">
+                all your faviourate apps that let you done your day to day tasks. Like firefox - for web browsing, Libreoffice - for documents, PPT and spreadsheet, Parola and VLC for musics, videos. releax os respect your privacy also.
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="bg-secondary fixpadding text-light"
+     style="background: url( {{ url_for('static',filename='img/releax.in/devel.jpg') }} ) no-repeat;
+            background-size: cover;
+            background-position: center center;
+            filter: grayscale(100%);
+            overflow: hidden;">
+    <div class="row"
+         style="background-color: rgba(0, 0, 0, 0.5);">
+         <div class="col-lg-7 p-lg-5"></div>
+         <div class="col-lg-5 p-lg-5"
+            data-aos="zoom-in"
+            data-aos-duration="1500">
+            <h3 class="heading">
+                An OS for programmers and developers
+            </h3>
+            <h4 class="tagline text-light">
+                Easy and efficient development environments, tools and kits that let you focus on your code. Tools like project, sys-app 
+                let you develop, maintain, copy-and-paste, update, debug, pack your code automatically. Let the fear of coding in linux out 
+                of your mind with releax base libraries.
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="bg-secondary fixpadding text-light"
+     style="background: url( {{ url_for('static',filename='img/releax.in/gamers.jpg') }} ) no-repeat;
+            background-size: cover;
+            background-position: center center;
+            filter: grayscale(100%);
+            overflow: hidden;">
+    <div class="row"
+         style="background-color: rgba(0, 0, 0, 0.5);">
+         <div class="col-lg-5 p-lg-5"
+            data-aos="zoom-in"
+            data-aos-duration="1500">
+            <h3 class="heading">
+                An OS for gamers
+            </h3>
+            <h4 class="tagline text-light">
+                With Steam, wine, playonlinux you are not going to miss your faviourate games. And no need to redownload them for releax. 
+                releax support, most of your games to run directly on it.
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="bg-secondary fixpadding text-light"
+     style="background: url( {{ url_for('static',filename='img/releax.in/graphics.jpg') }} ) no-repeat;
+            background-size: cover;
+            background-position: center center;
+            filter: grayscale(100%);
+            overflow: hidden;">
+    <div class="row"
+         style="background-color: rgba(0, 0, 0, 0.5);">
+         <div class="col-lg-7 p-lg-5"></div>
+         <div class="col-lg-5 p-lg-5"
+            data-aos="zoom-in"
+            data-aos-duration="1500">
+            <h3 class="heading">
+                An OS for Content creators
+            </h3>
+            <h4 class="tagline text-light">
+                GIMP, Inkscape and a lot of easy to use tools that enhance your skills with no cost. So are you paying for your hobbies.
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="fixpadding">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col p-lg-5"
+                 data-aos="zoom-in"
+                 data-aos-duration="1500">
+                <h3 class="heading">
+                    An OS of upcomming future
+                </h3>
+                <h4 class="tagline">
+                    Get yourself ready for the upcoming technology.
+                </h4>
+                <a class="btn hover"
+                   style="border: 2px solid rgb(22, 22, 22);
+                          background-color: transparent;
+                          color: rgb(22, 22, 22)"
+                   href="{{ '/download' }}">
+                    Download
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+<section id="features"
+         class="shadow pt-lg-5 fixpadding">
+        
+        <div class="container py-lg-5">
+        <h3 class="heading mb-5 text-center"
+            style="color: #212b35">
+            Meet the team
+        </h3>
+        <div class="row row-cols-1 row-cols-md-3">
+            {% for t in team %}
+            <div class="col mb-4">
+                <div class="card"
+                     data-aos="zoom-in-right"
+                     data-aos-duration="1500">
+                     <img class="card-img-top img-rounded rounded-circle"
+                        src="{{url_for('static',filename='img/releax.in/' + t['id'] + '.jpg' )}}">
+                    <div class="card-body text-center">
+                        <h5 class="card-title heading"
+                            style="font-weight: normal;">
+                            {{ t['name'] }}
+                        </h5>
+                        <p class="card-text tagline">
+                            {{ t['quotes'] }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="col mb-4">
+                <div class="card"
+                     data-aos="zoom-in-right"
+                     data-aos-duration="1500">
+                     <img class="card-img-top img-rounded rounded-circle"
+                        src="{{url_for('static',filename='img/releax.in/new.jpg' )}}">
+                    <div class="card-body text-center">
+                        <h5 class="card-title heading"
+                            style="font-weight: normal;">
+                            You
+                        </h5>
+                        <p class="card-text tagline">
+                            Can be you
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+{% endblock %}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>releax os</title>
+    <meta charset="UTF-8">
+    
+    <meta name="description"
+          content="releax gnu/linux os. a innvotive linux distro">
+
+    <meta name="keywords"
+          content="releax,gnu,linux,os,independent,xfce,distro,scratch,major,itsmanjeet">
+    
+    <meta name="author"
+          content="Manjeet Singh">
+      
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    
+      <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" 
+          href = "{{url_for('static', filename='css/bootstrap.min.css')}}">
+
+    <link rel="stylesheet"
+          href="{{url_for('static', filename='css/ui.css')}}">
+
+    <link rel="stylesheet"
+          href="{{url_for('static', filename='css/fonts.css')}}">
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,800|Nunito:400,600,700,800&display=swap">
+
+      <link rel="stylesheet"
+            href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+      <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    
+    
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light"
+         style="font-family: 'Maven Pro', sans-serif;
+                font-size: 16px;
+                font-weight: 500;">
+
+          <div class="container">
+                <a class="navbar-brand"
+                   href="{{'/'}}"
+                   style="font-family: 'Nunito', sans-serif;
+                          font-size: 32px;
+                          font-weight: 600;">
+
+                   <img src="{{ url_for('static', filename='img/releax.in/logo.svg') }}" style="width: 48px;">
+                   releax
+                </a>
+                  <button class="navbar-toggler" 
+                          type="button" 
+                          data-toggle="collapse" 
+                          data-target="#navbarSupportedContent" 
+                          aria-controls="navbarSupportedContent" 
+                          aria-expanded="false" 
+                          aria-label="Toggle navigation">
+
+                        <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div id="navbarSupportedContent"
+                       class="collapse navbar-collapse">
+                        <ul class="navbar-nav ml-auto">
+                              <li class="nav-item hover">
+                                    <a class="nav-link"
+                                       href="{{'/'}}">
+                                          Home
+                                    </a>
+                              </li>
+                              <li class="nav-item hover">
+                                    <a class="nav-link"
+                                       href="{{'/about'}}">
+                                          About
+                                    </a>
+                              </li>
+			                  <li class="nav-item hover">
+                                    <a class="nav-link"
+                                       href="{{'/gallery'}}">
+                                          Gallery
+                                    </a>
+                              </li>
+                              <li class="nav-item hover">
+                                    <a class="nav-link"
+                                       href="https://blog.releax.in">
+                                          Blog
+                                    </a>
+                              </li
+                              <li class="nav-item hover">
+                                    <a class="nav-link"
+                                       href="https://community.releax.in">
+                                          Community
+                                    </a>
+                              </li>
+                              <li class="nav-item hover">
+                                    <a class="nav-link"
+                                       href="https://wiki.releax.in">
+                                          Handbook
+                                    </a>
+                              </li>
+                              <li class="nav-item hover">
+                                    <a class="nav-link"
+                                       href="https://github.com/itsmanjeet/">
+                                          Source Codes
+                                    </a>
+                              </li>
+                        </ul>
+                  </div>
+          </div>
+    </nav>
+
+    {% block container %} {% endblock %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+<footer class="tagline page-footer mt-auto">
+      Copyright © 2020 releax
+</footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+      AOS.init();
+      $('.test, .nav-link').click(function() {
+            var sectionTo = $(this).attr('href');
+            var thisSection = $(this).parents('section').last().attr('id');
+
+            $('html, body').animate({
+                  scrollTop: $(sectionTo).offset().top
+            }, 700);
+            
+      });
+
+
+</script>
+</html>

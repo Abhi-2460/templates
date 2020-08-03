@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% block container %}
+<style>
+    .collapsible {
+        padding: 18px;
+        width:100%;
+        font-size: 15px;
+        text-align: left;
+        color: black;
+        background-color: white;
+
+    }
+    .collapsible:before {
+        content: "⮟";
+    }
+
+    .content {
+        padding: 0 18px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.2s ease-out;
+    }
+</style>
+
+<div class="container">
+    <div class="text-center">
+        <h2 class="heading">Issues</h2>
+        <p class="tagline">Minor issue and their fixes</p>
+    </div>
+
+<div class="p-5 mr-auto d-flex justify-content-center">
+
+<ul class="list-group">
+    {% for i in issues %}
+    <li class="p-4 list-group-item">
+    <button type="button" class="collapsible btn">
+         {{i['summary']}}
+    </button>
+    <div class="content">
+        <br>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="row">Target</th>
+                    <td>{{i['target']}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Brief</th>
+                    <td>{{i['brief']}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Status</th>
+                    <td>{{i['status']}}</td>
+                </tr>
+            </tbody>
+
+        </table>
+        </p>
+    </div>
+    </li>
+{% endfor %}
+</ul>
+</div>
+<div class="p-5 mr-auto d-flex justify-content-center">
+    <a class="btn" href="{{ '/contact' }}">
+        Request Feature /
+        Report Bug
+    </a>
+</div>
+</div>
+
+
+
+<script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+        </script>
+ {% endblock %}
